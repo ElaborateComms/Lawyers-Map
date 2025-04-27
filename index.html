@@ -10,656 +10,9 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="mappoints.css">
     </head>
 
-    <style>
-
-        *{
-            box-sizing: border-box;
-            transition: all ease 1s;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        body {
-            background-color: #c3e4ff;
-        }
-
-        .MapFrame {
-            margin: auto;
-        }
-
-        .SRIMap {
-            max-width: 1920px;
-            width: 100%;
-            max-height: 100vh;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .SRIMap img {
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 10%);
-        }
-
-        .SRIMap img{
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-        }
-
-        .pin::before {
-            animation: pulse 3s infinite ease-in-out;
-            background-color: #dc0028;
-            border-radius: 2rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            left: -0.5rem;
-            position: absolute;
-            content: '';
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-        }
-        .pin span {
-           background-color: #fff;
-           border: 1px solid #87152a;
-           white-space: nowrap;
-           position: absolute;
-           opacity: 0;
-           line-height: 1rem;
-           padding: 0.3rem;
-           border-radius: 0.3rem;
-           transition: all ease 1s;
-           overflow: hidden;
-           box-shadow: 0px 0px 2px 0px;
-           z-index: 150;
-        }
-
-                /*
-
-                h5 {
-                    line-height: 0rem;
-                    font-size: 0.5rem;
-                    font-weight: 800;
-                    font-family: verdana;
-                    text-transform: capitalize;
-                    color: #3c3c3c;
-                }
-
-                */
-
-        h4 {
-            line-height: 0.7rem;
-            font-size: 0.6rem;
-            font-weight: 400;
-            font-family: verdana;
-            text-transform: capitalize;
-            color: #87152a;
-        }
-
-         h3 {
-            text-transform: uppercase;
-            line-height: 0.2rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            font-family: verdana;
-            color: #3c3c3c;
-        }
-
-
-        
-            .USA {
-                position: absolute;
-                top: 50%;
-                left: 20%;
-                z-index: 10;
-            }
-
-            .CANADA {
-                position: absolute;
-                top: 44%;
-                left: 16%;
-                z-index: 5;
-            }
-
-            .UK {
-                position: absolute;
-                top: 25%;
-                left: 47.3%;
-                z-index: 10;
-            }
-
-            .KIRIBATI {
-                position: absolute;
-                top: 82%;
-                left: 22%;
-                z-index: 25;
-            }
-
-            .ICELAND {
-                position: absolute;
-                top: 19.5%;
-                left: 41%;
-                z-index: 5;
-            }
-
-            .BAHAMAS {
-                position: absolute;
-                top: 50.5%;
-                left: 27%;
-                z-index: 15;
-            }
-
-            .GUATEMALA {
-                position: absolute;
-                top: 58.3%;
-                left: 24.8%;
-                z-index: 17;
-            }
-
-            .HONDURAS {
-                position: absolute;
-                top: 58.5%;
-                left: 25.5%;
-                z-index: 19;
-            }
-
-            .PANAMA {
-                position: absolute;
-                top: 60%;
-                left: 27.5%;
-                z-index: 21;
-            }
-
-            .JAMAICA {
-                position: absolute;
-                top: 54%;
-                left: 27.5%;
-                z-index: 20;
-            }
-
-            .HAITI {
-                position: absolute;
-                top: 52.3%;
-                left: 28.3%;
-                z-index: 25;
-            }
-
-            .DOMINICANREPUBLIC {
-                position: absolute;
-                top: 51.8%;
-                left: 29%;
-                z-index: 27;
-            }
-
-            .SAINTKITTSNEVIS {
-                position: absolute;
-                top: 51%;
-                left: 30.5%;
-                z-index: 29;
-            }
-
-            .ANTIGUABARBUDA {
-                position: absolute;
-                top: 51.5%;
-                left: 31%;
-                z-index: 31;
-            }
-
-            .GRENADA {
-                position: absolute;
-                top: 54%;
-                left: 32.5%;
-                z-index: 33;
-            }
-
-            .TRINIDADTOBAGO {
-                position: absolute;
-                top: 54.5%;
-                left: 33%;
-                z-index: 34;
-            }
-
-            .VENEZUELA {
-                position: absolute;
-                top: 56.8%;
-                left: 31.5%;
-                z-index: 37;
-            }
-
-            .GUYANA {
-                position: absolute;
-                top: 56.8%;
-                left: 33%;
-                z-index: 39;
-            }
-
-            .PERU {
-                position: absolute;
-                top: 68%;
-                left: 30.5%;
-                z-index: 41;
-            }
-
-            .SURINAME {
-                position: absolute;
-                top: 56.8%;
-                left: 34%;
-                z-index: 42;
-            }
-
-            .ARGENTINA {
-                position: absolute;
-                top: 77%;
-                left: 34.3%;
-                z-index: 44;
-            }
-
-            .BRAZIL {
-                position: absolute;
-                top: 65%;
-                left: 36%;
-                z-index: 45;
-            }
-
-            .DENMARK {
-                position: absolute;
-                top: 23%;
-                left: 50%;
-                z-index: 55;
-            }
-
-
-            .NETHERLANDS {
-                position: absolute;
-                top: 24.8%;
-                left: 49%;
-                z-index: 56;
-            }
-
-            .BELGIUM {
-                position: absolute;
-                top: 25.6%;
-                left: 48.6%;
-                z-index: 57;
-            }
-
-            .GERMANY {
-                position: absolute;
-                top: 25.5%;
-                left: 50.3%;
-                z-index: 58;
-            }
-
-            .POLAND {
-                position: absolute;
-                top: 25%;
-                left: 53%;
-                z-index: 59;
-            }
-
-            .LATVIA {
-                position: absolute;
-                top: 22.8%;
-                left: 54.8%;
-                z-index: 59;
-            }
-
-            .FRANCE {
-                position: absolute;
-                top: 27.5%;
-                left: 48%;
-                z-index: 60;
-            }
-
-            .ROMANIA {
-                position: absolute;
-                top: 28.8%;
-                left: 54.5%;
-                z-index: 61;
-            }
-
-            .ITALY {
-                position: absolute;
-                top: 30%;
-                left: 51%;
-                z-index: 63;
-            }
-
-
-            .MONTENEGRO {
-                position: absolute;
-                top: 29.8%;
-                left: 52.5%;
-                z-index: 64;
-            }
-
-
-            .PORTUGAL {
-                position: absolute;
-                top: 32.2%;
-                left: 45.3%;
-                z-index: 65;
-            }
-
-            .SPAIN {
-                position: absolute;
-                top: 31.5%;
-                left: 46.5%;
-                z-index: 66;
-            }
-
-            .GREECE {
-                position: absolute;
-                top: 31.5%;
-                left: 54.5%;
-                z-index: 67;
-            }
-
-            .GEORGIA {
-                position: absolute;
-                top: 33%;
-                left: 60%;
-                z-index: 68;
-            }
-
-            .RUSSIA {
-                position: absolute;
-                top: 33%;
-                left: 77%;
-                z-index: 69;
-            }
-
-            .GIBRALTAR {
-                position: absolute;
-                top: 33.5%;
-                left: 46%;
-                z-index: 70;
-            }
-
-            .MALTA {
-                position: absolute;
-                top: 33.3%;
-                left: 50.8%;
-                z-index: 71;
-            }
-
-            .MOROCCO {
-                position: absolute;
-                top: 37%;
-                left: 45%;
-                z-index: 72;
-            }
-
-            .TUNISIA {
-                position: absolute;
-                top: 34.8%;
-                left: 50.3%;
-                z-index: 73;
-            }
-
-            .CYPRUS {
-                position: absolute;
-                top: 35.6%;
-                left: 57%;
-                z-index: 74;
-            }
-
-            .LEBANON {
-                position: absolute;
-                top: 34.8%;
-                left: 57.8%;
-                z-index: 75;
-            }
-
-            .SYRIANARABREPUBLIC {
-                position: absolute;
-                top: 36%;
-                left: 58.3%;
-                z-index: 76;
-            }
-
-            .ISRAEL {
-                position: absolute;
-                top: 36.8%;
-                left: 57.3%;
-                z-index: 77;
-            }
-
-            .KUWAIT {
-                position: absolute;
-                top: 39%;
-                left: 60.5%;
-                z-index: 78;
-            }
-
-            .UAE {
-                position: absolute;
-                top: 43%;
-                left: 62%;
-                z-index: 79;
-            }
-
-            .CABOVERDE {
-                position: absolute;
-                top: 44%;
-                left: 42.8%;
-                z-index: 79;
-            }
-
-            .MAURITANIA {
-                position: absolute;
-                top: 43.3%;
-                left: 45%;
-                z-index: 80;
-            }
-
-            .GUINEA {
-                position: absolute;
-                top: 48%;
-                left: 45%;
-                z-index: 81;
-            }
-
-
-            .GHANA {
-                position: absolute;
-                top: 48.5%;
-                left: 47.5%;
-                z-index: 82;
-            }
-
-
-            .NIGERIA {
-                position: absolute;
-                top: 48%;
-                left: 50%;
-                z-index: 83;
-            }
-
-            .CAMEROON {
-                position: absolute;
-                top: 50%;
-                left: 51%;
-                z-index: 84;
-            }
-
-            .SAOTOMEPRINCIPE {
-                position: absolute;
-                top: 53%;
-                left: 49%;
-                z-index: 85;
-            }
-
-            .ERITREA {
-                position: absolute;
-                top: 46.8%;
-                left: 58%;
-                z-index: 86;
-            }
-
-            .YEMEN {
-                position: absolute;
-                top: 46.8%;
-                left: 60%;
-                z-index: 87;
-            }
-
-            .KENYA {
-                position: absolute;
-                top: 54%;
-                left: 57%;
-                z-index: 88;
-            }
-
-            .UNITEDREPUBLICOFTANZANIA {
-                position: absolute;
-                top: 58.3%;
-                left: 56.3%;
-                z-index: 89;
-            }
-
-            .ANGOLA {
-                position: absolute;
-                top: 60%;
-                left: 52%;
-                z-index: 90;
-            }
-
-            .PAKISTAN {
-                position: absolute;
-                top: 42%;
-                left: 67%;
-                z-index: 91;
-            }
-
-            .CHINA {
-                position: absolute;
-                top: 49%;
-                left: 76%;
-                z-index: 92;
-            }
-
-            .REPUBLICOFKOREA {
-                position: absolute;
-                top: 57.5%;
-                left: 82.5%;
-                z-index: 93;
-            }
-
-            .JAPAN {
-                position: absolute;
-                top: 63%;
-                left: 86.5%;
-                z-index: 94;
-            }
-
-            .INDIA {
-                position: absolute;
-                top: 49%;
-                left: 68.5%;
-                z-index: 95;
-            }
-
-            .CAMBODIA {
-                position: absolute;
-                top: 60.8%;
-                left: 75%;
-                z-index: 98;
-            }
-
-            .VIETNAM {
-                position: absolute;
-                top: 62%;
-                left: 76.3%;
-                z-index: 97;
-            }
-
-            .PHILIPPINES {
-                position: absolute;
-                top: 70%;
-                left: 81.5%;
-                z-index: 98;
-            }
-
-            .SINGAPORE {
-                position: absolute;
-                top: 66%;
-                left: 73.5%;
-                z-index: 99;
-            }
-
-            .PAPUANEWGUINEA {
-                position: absolute;
-                top: 85%;
-                left: 83%;
-                z-index: 100;
-            }
-
-            .AUSTRALIA {
-                position: absolute;
-                top: 89%;
-                left: 78%;
-                z-index: 101;
-            }
-
-            .NEWZEALAND {
-                position: absolute;
-                top: 108%;
-                left: 82%;
-                z-index: 102;
-            }
-
-
-            .CABOTAGE {
-                position: absolute;
-                top: 108%;
-                left: 3%;
-                font-size: 4rem;
-                z-index: 10;
-            }
-
-            .CABOTAGE h3 {
-                font-size: 1rem;
-                color: #87152a;
-            }
-            
-            .bullet {
-                animation: pulse 3s infinite ease-in-out;
-            }
-
-            .CABOTAGE h3 {
-                display: inline;
-            }
-
-
-
-
-
-
-            .pin:hover > span {
-                opacity: 1;
-                z-index: 250;
-            }
-
-
-            @keyframes pulse {
-                100% {
-                    opacity: 0;
-                    transform: 
-                    translate(-50%, -50%)
-                    scale(1.5);
-                }
-            }
-
-
-
-    </style>
     <body>
 
         
@@ -684,6 +37,30 @@
                     -->
                     </span>
                 </div>
+
+                <div class="pin MEXICO">
+                    <span>
+                        <h3>MEXICO</h3>
+                        <a href="https://basham.com.mx/" target="_blank" rel="nofollow"><h4>Basham, Ringe y Correa, S.C</h4></a>
+                        <!--
+                        <h5>Mr Richard Jerald Dodson</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin IRELAND">
+                    <span>
+                        <h3>IRELAND</h3>
+                        <a href="https://www.mhc.ie/" target="_blank" rel="nofollow"><h4>Mason Hayes & Curran</h4></a>
+                        <!--
+                        <h5>Ms Kathryn Hudson</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
 
                 <div class="pin UK">
                     <span>
@@ -753,7 +130,7 @@
                 <div class="pin KIRIBATI">
                     <span>
                         <h3>KIRIBATI</h3>
-                        <a href="https://gunnercooke.com/" target="_blank" rel="nofollow"><h4>GUNNERCOOKE</h4></a>
+                        <a href="https://www.keystonelaw.com/" target="_blank" rel="nofollow"><h4>Keystone Law</h4></a>
                         <!--
                         <h5>Mr Simon J Murfitt</h5>
                         <h5>Partner</h5>
@@ -762,10 +139,21 @@
                     </span>
                 </div>
 
+                <div class="pin ELSALVADOR">
+                    <span>
+                        <h3>EL SALVADOR</h3>
+                        <a href="https://www.romeropineda.com" target="_blank" rel="nofollow"><h4>Romero Pineda & Asociados</h4></a>
+                        <!--
+                        <h5>Mr Carlos Roberto Ortega Aycinena</h5>
+                        <h5>Senior Associate</h5>
+                    -->
+                    </span>
+                </div>
+
                 <div class="pin GUATEMALA">
                     <span>
                         <h3>GUATEMALA</h3>
-                        <a href="http://www.mayora-mayora.com/" target="_blank" rel="nofollow"><h4>MAYORA & MAYORA ABOGADOS</h4></a>
+                        <a href="http://www.mayora-mayora.com" target="_blank" rel="nofollow"><h4>MAYORA & MAYORA ABOGADOS</h4></a>
                         <!--
                         <h5>Mr Carlos Roberto Ortega Aycinena</h5>
                         <h5>Senior Associate</h5>
@@ -784,10 +172,35 @@
                     </span>
                 </div>
 
+
+                <div class="pin NICARAGUA">
+                    <span>
+                        <h3>NICARAGUA</h3>
+                        <a href="https://alvaradoyasociadoslegal.com/" target="_blank" rel="nofollow"><h4>Alvarado Y Asociados</h4></a>
+                        <!--
+                        <h5>Mrs Rosalinda Cruz Sequeira</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+
                 <div class="pin PANAMA">
                     <span>
                         <h3>PANAMA</h3>
                         <a href="http://www.cajigaslaw.com/" target="_blank" rel="nofollow"><h4>CAJIGAS & CO.</h4></a>
+                        <!--
+                        <h5>Mr Enrique Alfonso</h5>
+                        <h5>Senior Partner</h5>
+                    -->
+
+                    </span>
+                </div>
+
+                <div class="pin COSTARICA">
+                    <span>
+                        <h3>COSTA RICA</h3>
+                        <a href="http://www.blplegal.com/" target="_blank" rel="nofollow"><h4>BLP legal</h4></a>
                         <!--
                         <h5>Mr Enrique Alfonso</h5>
                         <h5>Senior Partner</h5>
@@ -866,7 +279,7 @@
                 <div class="pin GRENADA">
                     <span>
                         <h3>GRENADA</h3>
-                        <a href="http://www.bristolgrenadalaw.com/" target="_blank" rel="nofollow"><h4>HENRY, HENRY & BRISTOL</h4></a>
+                        <a href="www.bristolgrenadalaw.com" target="_blank" rel="nofollow"><h4>HENRY, HENRY & BRISTOL</h4></a>
                         <!--
                         <h5>Mr James Bristol</h5>
                         <h5>Principal</h5>
@@ -880,6 +293,18 @@
 
                     </span>
                 </div>
+
+                <div class="pin SAINTVINCENT">
+                    <span>
+                        <h3>SAINT VINCENT AND THE GRENADINES</h3>
+                        <a href="http://www.elizabethlawchambers.com/" target="_blank" rel="nofollow"><h4>Elizabeth Law Chambers</h4></a>
+                        <!--
+                        <h5>Ms Kaveeta Persad</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
 
                 <div class="pin TRINIDADTOBAGO">
                     <span>
@@ -896,7 +321,7 @@
                 <div class="pin VENEZUELA">
                     <span>
                         <h3>VENEZUELA</h3>
-                        <a href="https://aureliofernandezconcheso.com/" target="_blank" rel="nofollow"><h4>AURELIO FERNÁNDEZ-CONCHESO ABOGADO (PART OF CLYDE & CO.)</h4></a>
+                        <a href="https://aureliofernandezconcheso.com/" target="_blank" rel="nofollow"><h4>Aurelio Fernández-Concheso Abogado</h4></a>
                         <!--
                         <h5>MR Aurelio Fernández-Concheso</h5>
                         <h5>Partner</h5>
@@ -926,10 +351,21 @@
                     </span>
                 </div>
 
+                <div class="pin ECUADOR">
+                    <span>
+                        <h3>ECUADOR</h3>
+                        <a href="http://www.pbplaw.com/" target="_blank" rel="nofollow"><h4>Pérez Bustamante & Ponce</h4></a>
+                        <!--
+                        <h5>Mr Manuel Quiroga Suito</h5>
+                        <h5>Main Partner</h5>
+                    -->
+                    </span>
+                </div>
+
                 <div class="pin PERU">
                     <span>
                         <h3>PERU</h3>
-                        <a href="https://www.qblegal.pe/" target="_blank" rel="nofollow"><h4>QUIROGA & BARTON</h4></a>
+                        <a href="https://www.munizlaw.com/" target="_blank" rel="nofollow"><h4>Estudio Muñiz</h4></a>
                         <!--
                         <h5>Mr Manuel Quiroga Suito</h5>
                         <h5>Main Partner</h5>
@@ -940,7 +376,7 @@
                 <div class="pin BRAZIL">
                     <span>
                         <h3>BRAZIL</h3>
-                        <a href="http://www.clydeco.com/" target="_blank" rel="nofollow"><h4>CLYDE & CO.</h4></a>
+                        <a href="https://www.clydeco.com/locations/office/sao-paulo" target="_blank" rel="nofollow"><h4>CLYDE & CO.</h4></a>
                         <!--
                         <h5>Mr Stirling Leech</h5>
                         <h5>Partner</h5>
@@ -964,6 +400,27 @@
                 </div>
 
 
+                <div class="pin PARAGUAY">
+                    <span>
+                        <h3>PARAGUAY</h3>
+                        <a href="www.vouga.com.py " target="_blank" rel="nofollow"><h4>Vouga Abogados</h4></a>
+                    </span>
+                </div>
+
+
+
+                <div class="pin CHILE">
+                    <span>
+                        <h3>CHILE</h3>
+                        <a href="http://www.cariola.cl/" target="_blank" rel="nofollow"><h4>CARIOLA DÍEZ PÉREZ-COTAPOS</h4></a>
+                        <!--
+                        <h5>Mr Franciso Jose Ventucci</h5>
+                        <h5>Attorney at Law</h5>
+                    -->
+                    </span>
+                </div>
+
+
                 <div class="pin ARGENTINA">
                     <span>
                         <h3>ARGENTINA</h3>
@@ -978,22 +435,33 @@
                 <div class="pin DENMARK">
                     <span>
                         <h3>DENMARK</h3>
-                        <a href="http://www.advokatkontoret.dk/" target="_blank" rel="nofollow"><h4>ADVOKATFIRMAET BJØRST</h4></a>
+                        <a href="www.advokatkontoret.dk" target="_blank" rel="nofollow"><h4>Advokatfirmaet Bjørst</h4></a>
                         <!--
                         <h5>Mr Peter Giersing</h5>
                         <h5>Attorney</h5>
                     -->
 
-                        <a href="http://www.aumento.dk/" target="_blank" rel="nofollow"><h4>AUMENTO LAW FIRM</h4></a>
+                        <a href="www.aumento.dk" target="_blank" rel="nofollow"><h4>Aumento Law Firm</h4></a>
                         <!--
                         <h5>Mr Anders Christian Aagaard</h5>
                         <h5>Partner</h5>
                     -->
 
-                        <a href="http://www.kochchristensen.dk/" target="_blank" rel="nofollow"><h4>KOCH/CHRISTENSEN LAW FIRM</h4></a>
+                        <a href="https://oadv.dk/" target="_blank" rel="nofollow"><h4>ØENS Law Firm</h4></a>
                         <!--
                         <h5>Mr John Flemming Kahlke</h5>
                         <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin LITHUANIA">
+                    <span>
+                        <h3>LITHUANIA</h3>
+                        <a href="https://www.cobalt.legal/" target="_blank" rel="nofollow"><h4>Cobalt</h4></a>
+                        <!--
+                        <h5>Mr Peter Giersing</h5>
+                        <h5>Attorney</h5>
                     -->
                     </span>
                 </div>
@@ -1002,7 +470,7 @@
                 <div class="pin NETHERLANDS">
                     <span>
                         <h3>NETHERLANDS</h3>
-                        <a href="http://www.wybenga-advocaten.nl/en" target="_blank" rel="nofollow"><h4>WYBENGA ADVOCATEN</h4></a>
+                        <a href="www.wybenga-advocaten.nl/en" target="_blank" rel="nofollow"><h4>WYBENGA ADVOCATEN</h4></a>
                         <!--
                         <h5>Ms Kirsten Boele</h5>
                         <h5>Attorney-at-Law</h5>
@@ -1050,19 +518,66 @@
                 <div class="pin GERMANY">
                     <span>
                         <h3>GERMANY</h3>
-                        <a href="http://www.maly-partner.de/" target="_blank" rel="nofollow"><h4>MALY AND PARTNERS</h4></a>
+                        <a href="www.maly-partner.de" target="_blank" rel="nofollow"><h4>Maly and Partners</h4></a>
                         <!--
                         <h5>Mr Dirk Abraham</h5>
                         <h5>Partner</h5>
                     -->
 
-                        <a href="http://www.waculik.de/" target="_blank" rel="nofollow"><h4>WACULIK, RICKMANN, JENDROSSEK</h4></a>
+                        <a href="www.Waculik.de" target="_blank" rel="nofollow"><h4>Waculik, Rickmann, Jendrossek</h4></a>
                         <!--
                         <h5>Mr Eckhard Rickmann</h5>
                         <h5>Attorney at Law</h5>
                     -->
+
+
+                    <a href="https://asd-law.com/" target="_blank" rel="nofollow"><h4>Arnecke Sibeth Dabelstein </h4></a>
+                    <!--
+                    <h5>Mr Eckhard Rickmann</h5>
+                    <h5>Attorney at Law</h5>
+                -->
+
                     </span>
                 </div>
+
+                <div class="pin CZECHIA">
+                    <span>
+                        <h3>CZECHIA</h3>
+                        <a href="https://www.ksb.cz/" target="_blank" rel="nofollow"><h4>Kocian Solc Balastik, advokatni kancelar, s.r.o.</h4></a>
+                        <!--
+                        <h5>Mr Dirk Abraham</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+
+
+                <div class="pin FINLAND">
+                    <span>
+                        <h3>FINLAND</h3>
+                        <a href="https://www.borenius.com/" target="_blank" rel="nofollow"><h4>Borenius</h4></a>
+                        <!--
+                        <h5>Valts Nerets</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+
+
+                <div class="pin ESTONIA">
+                    <span>
+                        <h3>ESTONIA</h3>
+                        <a href="www.ellex.ee" target="_blank" rel="nofollow"><h4>Ellex Raidla</h4></a>
+                        <!--
+                        <h5>Valts Nerets</h5>
+                        <h5>Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+                
 
 
                 <div class="pin LATVIA">
@@ -1077,10 +592,10 @@
                 </div>
 
 
-                <div class="pin POLAND">
+                <div class="pin SLOVAKIA">
                     <span>
-                        <h3>POLAND</h3>
-                        <a href="https://bridgemcfarland.co.uk/" target="_blank" rel="nofollow"><h4>MARITIME & COMMERCIAL <br >LAW OFFICE BARTOSZ BIECHOWSKI</h4></a>
+                        <h3>SLOVAKIA</h3>
+                        <a href="https://www.cechova.sk/" target="_blank" rel="nofollow"><h4>Čechová & Partners</h4></a>
                         <!--
                         <h5>Mr Bartosz Biechowski</h5>
                         <h5>Owner</h5>
@@ -1088,10 +603,35 @@
                     </span>
                 </div>
 
+
+                <div class="pin POLAND">
+                    <span>
+                        <h3>POLAND</h3>
+                        <a href="http://www.biechowski.com/" target="_blank" rel="nofollow"><h4>MARITIME & COMMERCIAL <br >LAW OFFICE BARTOSZ BIECHOWSKI</h4></a>
+                        <!--
+                        <h5>Mr Bartosz Biechowski</h5>
+                        <h5>Owner</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin HUNGARY">
+                    <span>
+                        <h3>HUNGARY</h3>
+                        <a href="https://bpv-legal.com/" target="_blank" rel="nofollow"><h4>bpv JÁDI NÉMETH</h4></a>
+                        <!--
+                        <h5>Mr Calin Herjenescu</h5>
+                        <h5>Attorney at Law</h5>
+                    -->
+                </div>
+
+
+
                 <div class="pin ROMANIA">
                     <span>
                         <h3>ROMANIA</h3>
-                        <a href="https://cautavocat.ro/" target="_blank" rel="nofollow"><h4>SOLE PRACTITIONER</h4></a>
+                        <a href="https://cautavocat.ro/avocat/herjenescu-calin" target="_blank" rel="nofollow"><h4>Calin Herjnescu</h4></a>
                         <!--
                         <h5>Mr Calin Herjenescu</h5>
                         <h5>Attorney at Law</h5>
@@ -1109,10 +649,10 @@
                     </span>
                 </div>
 
-                <div class="pin MONTENEGRO">
+                <div class="pin SLOVENIA">
                     <span>
-                        <h3>MONTENEGRO</h3>
-                        <a href="https://pejoviclegal.com/" target="_blank" rel="nofollow"><h4>PEJOVIC LEGAL</h4></a>
+                        <h3>SLOVENIA</h3>
+                        <a href="https://www.rppp.si/" target="_blank" rel="nofollow"><h4>Law Firm Rojs, Peljhan</h4></a>
                         <!--
                         <h5>Mrs Milena Rončević Pejović</h5>
                         <h5>Founder</h5>
@@ -1120,22 +660,67 @@
                     </span>
                 </div>
 
+                <div class="pin CROATIA">
+                    <span>
+                        <h3>CROATIA</h3>
+                        <a href="http://www.vukic-lawfirm.hr/" target="_blank" rel="nofollow"><h4>Law Firm Vukić, Jelušić, Šulina, Stanković, Jurcan & Jabuka</h4></a>
+                        <!--
+                        <h5>Mrs Milena Rončević Pejović</h5>
+                        <h5>Founder</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin MONTENEGRO">
+                    <span>
+                        <h3>MONTENEGRO</h3>
+                        <a href="https://www.karanovicpartners.com/" target="_blank" rel="nofollow"><h4>Karanović & Partners</h4></a>
+                        <!--
+                        <h5>Mrs Milena Rončević Pejović</h5>
+                        <h5>Founder</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin ALBANIA">
+                    <span>
+                        <h3>ALBANIA</h3>
+                        <a href="https://www.wolftheiss.com/" target="_blank" rel="nofollow"><h4>WOLF THEISS LAW FIRM</h4></a>
+                        <!--
+        
+                        -->
+                    </span>
+                </div>
+                
+
                 <div class="pin PORTUGAL">
                     <span>
                         <h3>PORTUGAL</h3>
-                        <a href="http://www.legalmca.com/" target="_blank" rel="nofollow"><h4>MC&A SOCIEDADE DE ADVOGADOS</h4></a>
+                        <a href="www.legalmca.com" target="_blank" rel="nofollow"><h4>MC&A Sociedade de Advogados</h4></a>
                         <!--
                         <h5>Mr Vitor Marques da Cruz</h5>
                         <h5>Founding Partner</h5>
                     -->
 
-                        <a href="https://www.plmj.com/" target="_blank" rel="nofollow"><h4>PLMJ</h4></a>
+                        <a href="https://www.eversheds-sutherland.pt/en/" target="_blank" rel="nofollow"><h4>Eversheds Sutherland</h4></a>
                         <!--
                         <h5>Mr Sergio Antunes Teixeira</h5>
                         <h5>Managing Associate</h5>
                     -->
                     </span>
                 </div>
+
+
+                <div class="pin BOSNIA">
+                    <span>
+                        <h3>BOSNIA AND HERZEGOVINA</h3>
+                        <a href="https://www.advokatskafirmasajic.com/" target="_blank" rel="nofollow"><h4>SAJIĆ ADVOKATSKA FIRMA</h4></a>
+                        <!--
+                        <h5>Mr Vitor Marques da Cruz</h5>
+                        <h5>Founding Partner</h5>
+                    </span>
+                </div>
+
 
                 <div class="pin SPAIN">
                     <span>
@@ -1151,7 +736,7 @@
                 <div class="pin GREECE">
                     <span>
                         <h3>GREECE</h3>
-                        <a href="#" target="_blank" rel="nofollow"><h4>ALYKATORAS LAW OFFICE</h4></a>
+                        <a href="alyklaw@otenet.gr" target="_blank" rel="nofollow"><h4>ALYKATORAS LAW OFFICE</h4></a>
                         <!--
                         <h5>Mr Thanasis Alykatoras</h5>
                         <h5>Partner</h5>
@@ -1160,7 +745,7 @@
                         <h5>Partner</h5>
                     -->
 
-                        <a href="https://pavlakis-moschos.gr/" target="_blank" rel="nofollow"><h4>PAVLAKIS - MOSCHOS & ASSOCIATES</h4></a>
+                        <a href="https://pavlakis-moschos.g" target="_blank" rel="nofollow"><h4>PAVLAKIS - MOSCHOS & ASSOCIATES</h4></a>
                         <!--
                         <h5>Mrs Vassiliki (Silina) Pavlakis - Moschou</h5>
                         <h5>Partner</h5>
@@ -1186,9 +771,22 @@
                     </span>
                 </div>
 
+                <div class="pin AZERBAIJAN">
+                    <span>
+                        <h3>AZERBAIJAN</h3>
+                        <a href="https://mgb-law.com/" target="_blank" rel="nofollow"><h4>MGB LAW OFFICES</h4></a>
+                        <!--
+                        <h5>Ms Rusudan Tchkuaseli</h5>
+                        <h5>Senior Associate</h5>
+                    -->
+                    </span>
+                </div>
+
+
+
                 <div class="pin RUSSIA">
                     <span>
-                        <h3>RUSSIA</h3>
+                        <h3>RUSSIAN FEDERATION</h3>
                         <a href="https://denuo.legal/en/main/" target="_blank" rel="nofollow"><h4>DENUO</h4></a>
                         <!--
                         <h5>Mr Philip Lamzin</h5>
@@ -1200,10 +798,19 @@
                     </span>
                 </div>
 
+
+                <div class="pin KAZAKHSTAN">
+                    <span>
+                        <h3>KAZAKHSTAN</h3>
+                        <a href="www.aequitas.kz " target="_blank" rel="nofollow"><h4>AEQUITAS Law Firm</h4></a>
+                    </span>
+                </div>
+
+
                 <div class="pin GIBRALTAR">
                     <span>
                         <h3>GIBRALTAR</h3>
-                        <a href="http://www.gibraltarlawyers.com/" target="_blank" rel="nofollow"><h4>ISOLAS</h4></a>
+                        <a href="www.gibraltarlawyers.com" target="_blank" rel="nofollow"><h4>ISOLAS</h4></a>
                         <!--
                         <h5>Mr Christian Hernandez</h5>
                         <h5>Partner</h5>
@@ -1295,10 +902,51 @@
                     </span>
                 </div>
 
+                <div class="pin LIBYA">
+                    <span>
+                        <h3>LIBYA</h3>
+                        <a href="https://www.abdoulawfirm.com/" target="_blank" rel="nofollow"><h4>Abdou Law Firm</h4></a>
+                        <!--
+                        <h5>Mr Ephraim Glazberg</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin EGYPT">
+                    <span>
+                        <h3>EGYPT</h3>
+                        <a href="https://www.dentons.com" target="_blank" rel="nofollow"><h4>Dentons</h4></a>
+                        <!--
+                        <h5>Mr Ephraim Glazberg</h5>
+                    -->
+                    </span>
+                </div>
+
                 <div class="pin ISRAEL">
                     <span>
                         <h3>ISRAEL</h3>
-                        <a href="http://www.glazberg.com/" target="_blank" rel="nofollow"><h4>EFRAIM GLAZBERG</h4></a>
+                        <a href="https://www.dajani-associates.com/" target="_blank" rel="nofollow"><h4>EFRAIM GLAZBERG</h4></a>
+                        <!--
+                        <h5>Mr Ephraim Glazberg</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin JORDAN">
+                    <span>
+                        <h3>JORDAN</h3>
+                        <a href="http://www.glazberg.com/" target="_blank" rel="nofollow"><h4>Dajani & Associates</h4></a>
+                        <!--
+                        <h5>Mr Ephraim Glazberg</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin IRAQ">
+                    <span>
+                        <h3>IRAQ</h3>
+                        <a href="https://amereller.com/office/baghdad/" target="_blank" rel="nofollow"><h4>MENA Associates in association with Amereller-Rechtsanwälte</h4></a>
                         <!--
                         <h5>Mr Ephraim Glazberg</h5>
                     -->
@@ -1310,6 +958,17 @@
                     <span>
                         <h3>KUWAIT</h3>
                         <a href="http://www.asarlegal.com/" target="_blank" rel="nofollow"><h4>ASAR - AL RUWAYEH & PARTNERS</h4></a>
+                        <!--
+                        <h5>Mr Sam Habbas</h5>
+                        <h5>Senior Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin IRAN">
+                    <span>
+                        <h3>IRAN</h3>
+                        <a href="https://ts-associates-counsel.com/" target="_blank" rel="nofollow"><h4>T&S ASSOCIATES</h4></a>
                         <!--
                         <h5>Mr Sam Habbas</h5>
                         <h5>Senior Partner</h5>
@@ -1339,16 +998,10 @@
                 <div class="pin CABOVERDE">
                     <span>
                         <h3>CABO VERDE</h3>
-                        <a href="https://www.plen.pt/" target="_blank" rel="nofollow"><h4>PLEN</h4></a>
+                        <a href="www.legalmca.com" target="_blank" rel="nofollow"><h4>MC&A SOCIEDADE DE ADVOGADOS</h4></a>
                         <!--
                         <h5>Mr Gabriel Cabral</h5>
                         <h5>Lawyer</h5>
-                    -->
-
-                        <a href="https://rsa-lp.com/" target="_blank" rel="nofollow"><h4>SA - RAPOSO SUBTILE ASSOCIADOS</h4></a>
-                        <!--
-                        <h5>Mr Ricardo Néry</h5>
-                        <h5>Partner</h5>
                     -->
 
                     </span>
@@ -1364,6 +1017,29 @@
                     -->
                     </span>
                 </div>
+
+                <div class="pin SENEGAL">
+                    <span>
+                        <h3>SENEGAL</h3>
+                        <a href="https://www.dlapiperafrica.com/en/senegal/about.html" target="_blank" rel="nofollow"><h4>Geni & Kebe</h4></a>
+                        <!--
+                        <h5>Mr Cheikhany Jules</h5>
+                        <h5>Senior Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin SENEGAL">
+                    <span>
+                        <h3>GUINEA-BISSAU</h3>
+                        <a href="http://www.raposobernardo.com/" target="_blank" rel="nofollow"><h4>Raposo Bernardo</h4></a>
+                        <!--
+                        <h5>Mr Cheikhany Jules</h5>
+                        <h5>Senior Partner</h5>
+                    -->
+                    </span>
+                </div>
+
 
                 <div class="pin GUINEA">
                     <span>
@@ -1391,10 +1067,26 @@
                     </span>
                 </div>
 
+                <div class="pin BENIN">
+                    <span>
+                        <h3>BENIN</h3>
+                        <a href="https://cabinetbadou.com/" target="_blank" rel="nofollow"><h4>Charles Badou & Partners</h4></a>
+
+                        <!--
+                        <h5>Mr Divine Kwaku Duwose Letsa</h5>
+                        <h5>Partner</h5>
+
+                        <h5>Ms Elizabeth Ashun</h5>
+                        <h5>Senior Associate</h5>
+                        -->
+                    </span>
+                </div>
+
+
                 <div class="pin NIGERIA">
                     <span>
                         <h3>NIGERIA</h3>
-                        <a href="http://www.creedbrooks.com/" target="_blank" rel="nofollow"><h4>CREED & BROOKS</h4></a>
+                        <a href="https://www.aelex.com/" target="_blank" rel="nofollow"><h4>ǼLEX</h4></a>
                         <!--
                         <h5>Mr Donald Ibebuike</h5>
                         <h5>Partner</h5>
@@ -1419,13 +1111,63 @@
                         <h5>Mr Ashunchung Paul Tanyi Ako</h5>
                         <h5>Lawyer</h5>
                     -->
+
+                    <a href="http://www.jingpartners.com/" target="_blank" rel="nofollow"><h4>JING & PARTNERS</h4></a>
+
                     </span>
                 </div>
 
                 <div class="pin SAOTOMEPRINCIPE">
                     <span>
-                        <h3>SAO TOME & PRINCIPE</h3>
-                        <a href="https://www.plmj.com/" target="_blank" rel="nofollow"><h4>PLMJ</h4></a>
+                        <h3>SÃO TOMÉ AND PRÍNCIPE</h3>
+                        <a href="http://www.mirandalawfirm.com/" target="_blank" rel="nofollow"><h4>Miranda Law Firm</h4></a>
+                        <!--
+                        <h5>Mr Saul Fonseca</h5>
+                        <h5>Senior Counsel</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin EQUATORIALGUINEA">
+                    <span>
+                        <h3>EQUATORIAL GUINEA</h3>
+                        <a href="http://www.mirandalawfirm.com/" target="_blank" rel="nofollow"><h4>Miranda Law Firm</h4></a>
+                        <!--
+                        <h5>Mr Saul Fonseca</h5>
+                        <h5>Senior Counsel</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin GABON">
+                    <span>
+                        <h3>GABON</h3>
+                        <a href="http://www.mirandalawfirm.com/" target="_blank" rel="nofollow"><h4>Miranda Law Firm</h4></a>
+                        <!--
+                        <h5>Mr Saul Fonseca</h5>
+                        <h5>Senior Counsel</h5>
+                    -->
+                    </span>
+                </div>
+
+
+                <div class="pin DEMOCATRICREPUBLICOFCONGO">
+                    <span>
+                        <h3>DEMOCATRIC REPUBLIC OF CONGO</h3>
+                        <a href="http://www.cabemery.org/" target="_blank" rel="nofollow"><h4>Emery Mukendi Wafwana & Associates</h4></a>
+                        <!--
+                        <h5>Mr Saul Fonseca</h5>
+                        <h5>Senior Counsel</h5>
+                    -->
+                    </span>
+                </div>
+
+                <div class="pin REPUBLICOFCONGO">
+                    <span>
+                        <h3>REPUBLIC OF CONGO</h3>
+                        <a href="https://gomeslawyers.com/" target="_blank" rel="nofollow"><h4>Cabinet d’avocats Gomes</h4></a>
                         <!--
                         <h5>Mr Saul Fonseca</h5>
                         <h5>Senior Counsel</h5>
@@ -1436,7 +1178,7 @@
                 <div class="pin ERITREA">
                     <span>
                         <h3>ERITREA</h3>
-                        <a href="https://bgm-legal.com/" target="_blank" rel="nofollow"><h4>BERHANE GILA MICHAEL & ASSOCIATES</h4></a>
+                        <a href="https://bgm-legal.com/" target="_blank" rel="nofollow"><h4>Berhane Gila Michael & Associates</h4></a>
                         <!--
                         <h5>Mr Berhane Gila Michael</h5>
                         <h5>Senior Counsel</h5>
@@ -1454,6 +1196,20 @@
                     -->
                     </span>
                 </div>
+
+
+                <div class="pin OMAN">
+                    <span>
+                        <h3>OMAN</h3>
+                        <a href="https://www.amjoman.com/" target="_blank" rel="nofollow"><h4>Al Busaidy Mansoor Jamal & Co</h4></a>
+                        <!--
+                        <h5>Dr Ghazi Shaif</h5>
+                        <h5>Managing Partner</h5>
+                    -->
+                    </span>
+                </div>
+
+
 
                 <div class="pin KENYA">
                     <span>
@@ -1483,16 +1239,55 @@
                     </span>
                 </div>
 
+                <div class="pin MOZAMBIQUE">
+                    <span>
+                        <h3>MOZAMBIQUE</h3>
+                        <a href="https://www.salcaldeira.com/" target="_blank" rel="nofollow"><h4>Sal & Caldeira, Advogados</h4></a>
+                    </span>
+                </div>
+
+                <div class="pin MADAGASCAR">
+                    <span>
+                        <h3>MADAGASCAR</h3>
+                        <a href="www.jwflegal.com" target="_blank" rel="nofollow"><h4>John W Ffooks & Co</h4></a>
+                    </span>
+                </div>
+
+
+
+                <div class="pin MAURITIUS">
+                    <span>
+                        <h3>MAURITIUS</h3>
+                        <a href="http://www.blc.mu/" target="_blank" rel="nofollow"><h4>BLC Robert & Associates</h4></a>
+                    </span>
+                </div>
+
+
+
                 <div class="pin ANGOLA">
                     <span>
                         <h3>ANGOLA</h3>
-                        <a href="https://bridgemcfarland.co.uk/" target="_blank" rel="nofollow"><h4>MVA MOTA VEIGA SOCIEDADE DE ADVOGADOS</h4></a>
+                        <a href="https://www.mva.co.ao/" target="_blank" rel="nofollow"><h4>MVA MOTA VEIGA SOCIEDADE DE ADVOGADOS</h4></a>
                         <!--
                         <h5>Mr Mauro Mota Veiga</h5>
                         <h5>Partner</h5>
                         -->
                     </span>
                 </div>
+
+
+                <div class="pin BURUNDI">
+                    <span>
+                        <h3>BURUNDI</h3>
+                        <a href="https://www.dlapiperafrica.com/en/burundi/index.html" target="_blank" rel="nofollow"><h4>Rubeya & Co-Advocates</h4></a>
+                        <!--
+                        <h5>Mr Mauro Mota Veiga</h5>
+                        <h5>Partner</h5>
+                        -->
+                    </span>
+                </div>
+
+
 
                 <div class="pin PAKISTAN">
                     <span>
@@ -1508,16 +1303,10 @@
                 <div class="pin CHINA">
                     <span>
                         <h3>CHINA</h3>
-                        <a href="http://en.king-capital.com/#1" target="_blank" rel="nofollow"><h4>KING & CAPITAL LAW FIRM (DALIAN OFFICE)</h4></a>
+                        <a href="https://cn.rajahtannasia.com/" target="_blank" rel="nofollow"><h4>RAJAH & TANN</h4></a>
                         <!--
                         <h5>Mr Hua Yang</h5>
                         <h5>Director</h5>
-                        -->
-
-                        <a href="http://en.king-capital.com/#1" target="_blank" rel="nofollow"><h4>KING & CAPITAL LAW FIRM (BEIJING OFFICE)</h4></a>
-                        <!--
-                        <h5>Mr Han Liang</h5>
-                        <h5>Senior Advisor</h5>
                         -->
 
                         <a href="http://www.shlegal.com/" target="_blank" rel="nofollow"><h4>STEPHENSON HARWOOD</h4></a>
@@ -1566,7 +1355,7 @@
                 <div class="pin INDIA">
                     <span>
                         <h3>INDIA</h3>
-                        <a href="http://bosemitraco.com/" target="_blank" rel="nofollow"><h4>BOSE & MITRA & CO</h4></a>
+                        <a href="http://bosemitraco.com/" target="_blank" rel="nofollow"><h4>Bose & Mitra & Co</h4></a>
                         <!--
                         <h5>Mr Amitava (Raja) Majumdar</h5>
                         <h5>Managing Partner</h5>
@@ -1602,33 +1391,30 @@
                 <div class="pin PHILIPPINES">
                     <span>
                         <h3>PHILIPPINES</h3>
-                        <a href="http://www.cltpsj.com.ph/" target="_blank" rel="nofollow"><h4>CASTILLO LAMAN TAN PANTALEON & SAN JOSE</h4></a>
-                        <!--
-                        <h5>Mr Rommel V. Cuison</h5>
-                        <h5>Partner</h5>
+                        <a href="http://www.cltpsj.com.ph/" target="_blank" rel="nofollow"><h4>Castillo Laman Tan Pantaleon & San Jose</h4></a>
 
-                        <h5>Mr Roberto N Dio</h5>
-                        <h5>Partner</h5>
+                        <a href="www.sapalovelez.com" target="_blank" rel="nofollow"><h4>Sapalo Velez Bundang & Bulilan</h4></a>
 
-                        <h5>Mr Enrique Wong Galang</h5>
-                        <h5>Partner</h5>
+                        <a href="https://www.dacanaymagracialaw.com/" target="_blank" rel="nofollow"><h4>Dacanay Magracia Law Offices</h4></a>
 
-                        <h5>Mr Ray Anthony O. Pinoy</h5>
-                        <h5>Partner</h5>
-                        -->
-
-                        <a href="http://www.sapalovelez.com/" target="_blank" rel="nofollow"><h4>SAPALO VELEZ BUNDANG & BULILAN</h4></a>
-                        <!--
-                        <h5>Mr Ignacio Savillo Sapalo</h5>
-                        <h5>Managing Partner</h5>
-                        -->
                     </span>
                 </div>
+
+
+                <div class="pin PALAU">
+                    <span>
+                        <h3>PALAU</h3>
+                        <a href="www.chapmantripp.com" target="_blank" rel="nofollow"><h4>Chapmann Tripp</h4></a>
+                       
+                        </span>
+                </div>
+
+
 
                 <div class="pin SINGAPORE">
                     <span>
                         <h3>SINGAPORE</h3>
-                        <a href="http://www.gurbaniandco.com/" target="_blank" rel="nofollow"><h4>GURBANI & CO LLC</h4></a>
+                        <a href="http://www.gurbaniandco.com/" target="_blank" rel="nofollow"><h4>Gurbani & Co LLC</h4></a>
                         <!--
                         <h5>Mr Govintharasah Ramanathan</h5>
                         <h5>Managing Director</h5>
@@ -1642,10 +1428,22 @@
                     </span>
                 </div>
 
+                <div class="pin INDONESIA">
+                    <span>
+                        <h3>INDONESIA</h3>
+                        <a href="http://www.abnrlaw.com/" target="_blank" rel="nofollow"><h4>ALI BUDIARDJO, NUGROHO, REKSODIPUTRO (ABNR)</h4></a>
+                        <!--
+                        <h5>Mr Govintharasah Ramanathan</h5>
+                        <h5>Managing Director</h5>
+                    -->
+                    </span>
+                </div>
+
+
                 <div class="pin PAPUANEWGUINEA">
                     <span>
                         <h3>PAPUA NEW GUINEA</h3>
-                        <a href="http://www.obriens.com.pg/" target="_blank" rel="nofollow"><h4>O'BRIEN'S LAWYERS</h4></a>
+                        <a href="www.obriens.com.pg" target="_blank" rel="nofollow"><h4>O'BRIEN'S LAWYERS</h4></a>
                         <!--
                         <h5>Mr Alu Konena</h5>
                         <h5>Lawyer</h5>
@@ -1663,12 +1461,6 @@
                         <!--
                         <h5>Mr Howard Rapke</h5>
                         <h5>Managing Partner</h5>
-                        -->
-
-                        <a href="#" target="_blank" rel="nofollow"><h4>JOHN LEVINGSTON</h4></a>
-                        <!--
-                        <h5>Mr John Levingston</h5>
-                        <h5>Barrister</h5>
                         -->
 
                         <a href="https://www.mcnally.legal/" target="_blank" rel="nofollow"><h4>MCNALLY JONES STAFF</h4></a>
@@ -1693,11 +1485,29 @@
                         <h5>Ms Pauline Davies</h5>
                         <h5>Partner</h5>
                         -->
+                    </span>
+                </div>
 
-                        <a href="https://mdjlaw.co.nz/" target="_blank" rel="nofollow"><h4>MCBRIDE DAVENPORT JAMES</h4></a>
+
+                <div class="pin MARSHALLISLANDS">
+                    <span>
+                        <h3>MARSHALL ISLANDS</h3>
+                        <a href="http://mccaffreyfirm.com/" target="_blank" rel="nofollow"><h4>The McCaffrey Firm Ltd</h4></a>
                         <!--
-                        <h5>Mr Paul McBride</h5>
-                        <h5>Partner</h5>
+                        <h5>Mr Peter Dawson</h5>
+                        <h5>Director</h5>
+                        -->
+                    </span>
+                </div>
+
+
+                <div class="pin FIJI">
+                    <span>
+                        <h3>FIJI</h3>
+                        <a href="http://www.howardslaw.com.fj/" target="_blank" rel="nofollow"><h4>Howards Lawyers</h4></a>
+                        <!--
+                        <h5>Mr Peter Dawson</h5>
+                        <h5>Director</h5>
                         -->
                     </span>
                 </div>
