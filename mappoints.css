@@ -316,6 +316,13 @@ h4 {
         z-index: 45;
     }
 
+    .URUGUAY {
+        position: absolute;
+        top: 76%;
+        left: 36.3%;
+        z-index: 46;
+    }
+
     .DENMARK {
         position: absolute;
         top: 23%;
@@ -373,6 +380,15 @@ h4 {
         z-index: 61;
     }
 
+
+    .SWEDEN {
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        z-index: 57;
+    }
+
+
     .FINLAND {
         position: absolute;
         top: 19%;
@@ -414,7 +430,14 @@ h4 {
         position: absolute;
         top: 28.8%;
         left: 54.5%;
-        z-index: 61;
+        z-index: 63;
+    }
+
+    .TURKEY {
+        position: absolute;
+        top: 33%;
+        left: 57.5%;
+        z-index: 64;
     }
 
     .ITALY {
@@ -511,6 +534,22 @@ h4 {
         z-index: 71;
     }
 
+    .UZBEKISTAN {
+        position: absolute;
+        top: 35%;
+        left: 65%;
+        z-index: 77;
+    }
+
+
+    .TURKMENISTAN {
+        position: absolute;
+        top: 36%;
+        left: 64%;
+        z-index: 77;
+    }
+
+
     .GIBRALTAR {
         position: absolute;
         top: 33.5%;
@@ -573,6 +612,15 @@ h4 {
         left: 55.5%;
         z-index: 76;
     }
+
+
+    .SUDAN {
+        position: absolute;
+        top: 45%;
+        left: 55.7%;
+        z-index: 77;
+    }
+
 
     .ISRAEL {
         position: absolute;
@@ -660,12 +708,19 @@ h4 {
         z-index: 85;
     }
 
+    .TOGO {
+        position: absolute;
+        top: 48.8%;
+        left: 48.2%;
+        z-index: 86;
+    }
+
 
     .BENIN {
         position: absolute;
         top: 48.1%;
         left: 48.5%;
-        z-index: 83;
+        z-index: 87;
     }
 
 
@@ -673,7 +728,7 @@ h4 {
         position: absolute;
         top: 48%;
         left: 50%;
-        z-index: 84;
+        z-index: 88;
     }
 
     .CAMEROON {
@@ -825,6 +880,22 @@ h4 {
         z-index: 95;
     }
 
+
+    .SRILANKA {
+        position: absolute;
+        top: 56.3%;
+        left: 68%;
+        z-index: 96;
+    }
+
+    .THAILAND {
+        position: absolute;
+        top: 58.3%;
+        left: 74.5%;
+        z-index: 97;
+    }
+
+
     .CAMBODIA {
         position: absolute;
         top: 60.8%;
@@ -874,32 +945,39 @@ h4 {
         z-index: 100;
     }
 
+    .SOLOMONISLANDS {
+        position: absolute;
+        top: 93%;
+        left: 84.5%;
+        z-index: 103;
+    }
+
     .AUSTRALIA {
         position: absolute;
         top: 89%;
         left: 78%;
-        z-index: 101;
+        z-index: 102;
     }
 
     .NEWZEALAND {
         position: absolute;
         top: 108%;
         left: 82%;
-        z-index: 102;
+        z-index: 103;
     }
 
     .FIJI {
         position: absolute;
         top: 100%;
         left: 87%;
-        z-index: 100;
+        z-index: 104;
     }
 
     .MARSHALLISLANDS {
         position: absolute;
         top: 80%;
         left: 87%;
-        z-index: 101;
+        z-index: 105;
     }
 
 
